@@ -1,5 +1,5 @@
-import User from "./User.js";
-class UsersRepository {
+import Student from "./Student.js";
+class Repository {
     constructor() {
         this.users = []
     }
