@@ -1,29 +1,29 @@
 import Student from "./Student.js";
-class Repository {
+class StudentRepository {
     constructor() {
-        this.users = []
+        this.students = []
     }
 
-    getAllUsers() {
-        return this.users
+    getAllStudents() {
+        return this.students
     }
 
-    addUser(name, email, password) {
-        const newUser = new User(name, email, password)
-        this.users.push(newUser)
+    addStudent(name, email, password) {
+        const newStudent = new Student(name, email, password)
+        this.Student.push(newStudent)
 
-        return newUser
+        return newStudent
     }
 
     getUserById(id) {
-        const user = this.users.find((u) => u.id == id)
-        if (!user) {
+        const student = this.Student.find((u) => u.id == id)
+        if (!student) {
             return null
         }
-        return user
+        return student
     }
 
-    updateUser(id, name, email, password) {
+    updateStudent(id, name, email, password) {
         const user = this.getUserById(id)
         if (!user) {
             return null
@@ -40,10 +40,10 @@ class Repository {
         if (!user) {
             return null
         }
-        this.users = this.users.filter((u) => u.id != id)
+        this.Student = this.Student.filter((u) => u.id != id)
 
         return user
     }
 }
 
-export default UsersRepository
+export default StudentRepository
