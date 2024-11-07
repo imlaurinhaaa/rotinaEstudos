@@ -15,35 +15,29 @@ class StudentRepository {
         return newStudent
     }
 
-    getUserById(id) {
-        const student = this.Student.find((u) => u.id == id)
+    getStudentById(id) {
+        const student = this.students.find((u) => u.id == id)
         if (!student) {
             return null
         }
         return student
     }
 
-    updateStudent(id, name, email, password) {
-        const user = this.getUserById(id)
-        if (!user) {
-            return null
+    updateStudent(id, materia, progresso, objetivos, dificuldade) {
+        const student = this.getStudentById(id);
+    
+        if (!student) {
+          return null;
         }
-        user.name = name
-        user.email = email
-        user.password = password
-
-        return user
+    
+        student.materia = materia;
+        student.progresso = progresso;
+        student.objetivos = objetivos;
+        student.dificuldade = dificuldade;
+    
+        return student
+      }
     }
 
-    deleteUser(id) {
-        const user = this.getUserById(id)
-        if (!user) {
-            return null
-        }
-        this.Student = this.Student.filter((u) => u.id != id)
-
-        return user
-    }
-}
 
 export default StudentRepository
