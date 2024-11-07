@@ -15,5 +15,16 @@ studentsRoutes.get("/", (req, res) => {
     });
     });
 
+studentsRoutes.post("/", (req, res) => {
+  const {materia, progresso, objetivos, dificuldade} = req.body;
+
+  const students = studentsList.addStudent(materia, progresso, objetivos, dificuldade);
+
+  return res.status(201).json({
+    message: "Estudante cadastrado com sucesso!",
+    students,
+  });
+});
+
 
 export default studentsRoutes;

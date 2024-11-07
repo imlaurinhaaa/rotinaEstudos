@@ -8,9 +8,9 @@ class StudentRepository {
         return this.students
     }
 
-    addStudent(name, email, password) {
-        const newStudent = new Student(name, email, password)
-        this.Student.push(newStudent)
+    addStudent(materia, progresso, objetivos, dificuldade) {
+        const newStudent = new Student(materia, progresso, objetivos, dificuldade)
+        this.students.push(newStudent)
 
         return newStudent
     }
